@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rahul — Backend & AI Developer</title>
+<meta name="description" content="Rahul — Backend & AI Developer in Regina, SK. Python, FastAPI, LLMs, RAG, microservices. 6+ years building production systems.">
+<meta property="og:title" content="Rahul — Backend & AI Developer">
+<meta property="og:description" content="Python · FastAPI · LLMs · RAG · Microservices. Building intelligent, scalable systems from Regina, SK.">
+<meta property="og:type" content="website">
+<script>
+  // set theme before paint: saved choice, else system preference
+  (function(){try{var t=localStorage.getItem('theme');}catch(e){}
+    if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.dataset.theme=t;})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f2ea; --paper-2:#ede6d8; --ink:#1c1d1f; --ink-2:#4a4b4f; --ink-3:#7a7a7c;
+    --wheat:#b8862b; --wheat-soft:#e9d7ae; --sky:#2f4b5e; --rule:#d8cfbd;
+    --serif:"Fraunces",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  :root[data-theme="dark"]{--paper:#121417;--paper-2:#1b1e22;--ink:#ece7dc;--ink-2:#b7b2a7;--ink-3:#8a867e;--wheat:#e0aa45;--wheat-soft:#3a3122;--sky:#8fb3c9;--rule:#2a2e33;color-scheme:dark}
+  :root{color-scheme:light}
+  body,nav,.card,.facts,.stack li{transition:background-color .35s ease,color .35s ease,border-color .35s ease}
+
+  /* theme toggle */
+  .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);cursor:pointer;display:grid;place-items:center;position:relative;overflow:hidden}
+  .theme-btn:hover{border-color:var(--wheat)}
+  .theme-btn svg{width:18px;height:18px;position:absolute;transition:transform .5s cubic-bezier(.6,-0.3,.3,1.4),opacity .3s}
+  .theme-btn .sun{transform:rotate(0) scale(1);opacity:1}
+  .theme-btn .moon{transform:rotate(-90deg) scale(.4);opacity:0}
+  [data-theme="dark"] .theme-btn .sun{transform:rotate(90deg) scale(.4);opacity:0}
+  [data-theme="dark"] .theme-btn .moon{transform:rotate(0) scale(1);opacity:1}
+  .nav-right{display:flex;align-items:center;gap:26px}
+
+  /* 3D hero canvas */
+  #hero-3d{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+  #hero-3d.ready{opacity:1}
+  header.hero .wrap{position:relative;z-index:1}
+  .hero-glow{position:absolute;right:-10%;top:-10%;width:60vw;height:60vw;max-width:780px;max-height:780px;border-radius:50%;
+    background:radial-gradient(circle,color-mix(in srgb,var(--wheat) 18%,transparent),transparent 65%);z-index:0;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate(-6%,8%) scale(1.08)}}
+
+  /* 3D tilt on project cards */
+  .grid{perspective:1400px}
+  .card{transform-style:preserve-3d;will-change:transform}
+  .card.tilting{transition:transform .08s linear,background .2s}
+  .card:not(.tilting){transition:transform .5s ease,background .2s}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .mark{font:500 14px var(--mono);letter-spacing:.02em;text-decoration:none}
+  .mark span{color:var(--wheat)}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:14px}
+  nav ul a{text-decoration:none;color:var(--ink-2)}
+  nav ul a:hover{color:var(--ink)}
+
+  header.hero{padding:96px 0 40px;position:relative;overflow:hidden}
+  .eyebrow{font:500 13px var(--mono);color:var(--wheat);letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px}
+  h1{font:400 clamp(40px,7vw,78px)/1.04 var(--serif);letter-spacing:-.02em;max-width:14ch}
+  h1 em{font-style:italic;color:var(--sky)}
+  .lede{font-size:19px;color:var(--ink-2);max-width:58ch;margin-top:26px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{font:500 14px var(--sans);padding:11px 18px;border-radius:3px;text-decoration:none;border:1px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn:hover{transform:translateY(-1px)}
+  .horizon{margin-top:72px;height:56px;border-top:1px solid var(--rule);
+    background:repeating-linear-gradient(90deg,transparent 0 22px,var(--rule) 22px 23px);opacity:.55;
+    mask:linear-gradient(to bottom,#000,transparent)}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:-56px;position:relative;background:var(--paper)}
+  .facts div{padding:20px 18px;border-right:1px solid var(--rule)}
+  .facts div:last-child{border-right:0}
+  .facts b{display:block;font:400 30px var(--serif)}
+  .facts small{font:13px var(--mono);color:var(--ink-3)}
+
+  section{padding:88px 0 20px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+  .sec-head .num{font:500 13px var(--mono);color:var(--wheat)}
+  h2{font:400 36px/1.1 var(--serif);letter-spacing:-.01em}
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+  .about p{color:var(--ink-2);margin-bottom:16px;font-size:17px}
+  .about p strong{color:var(--ink);font-weight:600}
+  .stack h3{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin:0 0 8px}
+  .stack ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+  .stack li{font:13px var(--mono);padding:4px 9px;border:1px solid var(--rule);border-radius:2px;background:var(--paper-2)}
+
+  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .filters button{font:500 13px var(--mono);padding:7px 13px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);border-radius:20px;cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .card{background:var(--paper);padding:28px 28px 24px;display:flex;flex-direction:column;transition:background .2s}
+  .card:hover{background:var(--paper-2)}
+  .card.feature{grid-column:span 2}
+  .tag{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--wheat);margin-bottom:10px}
+  .tag .wip{color:var(--sky)}
+  .card h3{font:400 25px/1.2 var(--serif);margin-bottom:10px}
+  .card p{color:var(--ink-2);font-size:15px;margin-bottom:14px}
+  .card ul.pts{list-style:none;margin-bottom:16px;font-size:14.5px;color:var(--ink-2)}
+  .card ul.pts li{padding-left:16px;position:relative;margin-bottom:4px}
+  .card ul.pts li::before{content:"→";position:absolute;left:0;color:var(--wheat);font-size:12px;top:2px}
+  .tech{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;font:12px var(--mono);color:var(--ink-3)}
+  .tech span::after{content:" ·"}
+  .tech span:last-child::after{content:""}
+  .links{margin-top:14px;display:flex;gap:16px;font:500 13px var(--mono)}
+  .links a{text-decoration:none;border-bottom:1px solid var(--wheat)}
+  .links .private{color:var(--ink-3)}
+  .card[hidden]{display:none}
+
+  .timeline{border-left:1px solid var(--rule);margin-left:6px}
+  .role{position:relative;padding:0 0 36px 32px}
+  .role::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--wheat)}
+  .role .when{font:13px var(--mono);color:var(--ink-3)}
+  .role h3{font:400 23px var(--serif);margin:2px 0}
+  .role .org{font-weight:500;color:var(--sky);font-size:15px}
+  .role p{color:var(--ink-2);max-width:68ch;margin-top:8px;font-size:15.5px}
+
+  .contact{padding:96px 0;text-align:left}
+  .contact h2{font-size:clamp(34px,5vw,54px);max-width:18ch;margin-bottom:22px}
+  .contact p{color:var(--ink-2);max-width:52ch;margin-bottom:28px;font-size:17px}
+  footer{border-top:1px solid var(--rule);padding:24px 0 40px;font:13px var(--mono);color:var(--ink-3)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+
+  @media (max-width:760px){
+    #hero-3d.ready{opacity:.28}
+    nav ul{display:none}
+    header.hero{padding-top:64px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .facts div:nth-child(2){border-right:0}
+    .facts div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+    .about{grid-template-columns:1fr;gap:28px}
+    .grid{grid-template-columns:1fr}
+    .card.feature{grid-column:span 1}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="mark">rahul<span>.</span>dev</a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" id="theme-btn" aria-label="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.6 6.6 0 0 0 10.7 10.7z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <canvas id="hero-3d" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Backend &amp; AI Developer · Regina, SK</p>
+    <h1>I build backends that <em>think</em> — and systems that scale.</h1>
+    <p class="lede">Six years of production engineering, from enterprise Java to Python microservices, now focused on LLM applications: retrieval pipelines, agents, and tools that turn messy operational data into decisions.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn" href="https://github.com/rahul-bavaliya" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="horizon"></div>
+    <div class="facts">
+      <div><b>6+</b><small>years engineering</small></div>
+      <div><b>12</b><small>microservices in ShopCore</small></div>
+      <div><b>RAG</b><small>+ ML hybrid systems</small></div>
+      <div><b>3</b><small>industries shipped in</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
+    <div class="about">
+      <div class="reveal">
+        <p>I'm a backend developer who has spent my career on the side of software that has to work every day: <strong>enterprise Java platforms at TCS and Newgen Software</strong>, then <strong>Python and FastAPI services</strong>, and now <strong>applied AI</strong> — RAG pipelines, LLM agents, and the evaluation and guardrails that make them trustworthy.</p>
+        <p>Today I'm the <strong>Service Pricing Manager at Brandt Tractor</strong>, where I sit between operations and data. I build Power BI reporting on equipment telematics, wire up APIs, and lead internal programs. That seat taught me something most AI demos miss: the hard part is the messy, real-world data and the people who need a straight answer from it.</p>
+        <p>I'm looking for a <strong>Senior Backend or AI Developer</strong> role where I can build those systems full-time.</p>
+      </div>
+      <div class="stack reveal">
+        <h3>Languages</h3>
+        <ul><li>Python</li><li>Java</li><li>Rust</li><li>TypeScript</li><li>SQL</li><li>DAX / M</li></ul>
+        <h3>Backend</h3>
+        <ul><li>FastAPI</li><li>Django / DRF</li><li>tRPC</li><li>Kafka</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <h3>AI / LLM</h3>
+        <ul><li>RAG</li><li>Claude API</li><li>NVIDIA NIM</li><li>Llama 3.1</li><li>ChromaDB</li><li>Whisper</li><li>XGBoost</li></ul>
+        <h3>Cloud &amp; Data</h3>
+        <ul><li>GCP</li><li>Supabase</li><li>Power BI</li><li>REST APIs</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">02</span><h2>Selected projects</h2></div>
+    <div class="filters reveal" role="group" aria-label="Filter projects">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="ai">AI / LLM</button>
+      <button aria-pressed="false" data-f="backend">Backend</button>
+      <button aria-pressed="false" data-f="full">Full-stack</button>
+    </div>
+
+    <div class="grid">
+
+      <article class="card feature reveal" data-cat="ai backend">
+        <p class="tag">Applied AI · Hybrid RAG + ML</p>
+        <h3>Work Order Time Estimator</h3>
+        <p>A chatbot that estimates how long a service job will take. It blends retrieval over historical work orders with a gradient-boosted model, so service advisors get a number <em>and</em> the past jobs that justify it.</p>
+        <ul class="pts">
+          <li>XGBoost regressor for the estimate; RAG over similar past jobs for the explanation</li>
+          <li>NVIDIA NIM embeddings + Llama 3.1-70B for synthesis, ChromaDB vector store</li>
+          <li>FastAPI backend with an OpenAI-compatible client that works behind corporate proxies and SSL inspection</li>
+        </ul>
+        <div class="tech"><span>Python 3.13</span><span>FastAPI</span><span>XGBoost</span><span>ChromaDB</span><span>NVIDIA NIM</span><span>Llama 3.1</span></div>
+        <div class="links"><span class="private">Professional work · code private</span></div>
+      </article>
+
+      <article class="card feature reveal" data-cat="backend">
+        <p class="tag"><span class="wip">● Active</span> · Rust · Domain modelling</p>
+        <h3>Quoto</h3>
+        <p>A quoting and repair-order system for equipment and vehicle service shops, written from scratch in Rust. Each feature is built in small steps, with tests guarding the money math.</p>
+        <ul class="pts">
+          <li>Money stored as integer cents; credits apply before tax and can never push a quote below $0</li>
+          <li>Saskatchewan and Alberta GST/PST, decided by the branch's province, not the customer's address</li>
+          <li>Quote lifecycle rules (pending, accepted, rejected, expired) enforced by the type system; VIN lookup through NHTSA</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Web API</span><span>PostgreSQL</span><span>Docker</span><span>Unit + scenario tests</span></div>
+        <div class="links"><a href="https://github.com/rahul-bavaliya/quoto" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card reveal" data-cat="backend">
+        <p class="tag">Distributed systems</p>
+        <h3>ShopCore</h3>
+        <p>An e-commerce platform split into 12 FastAPI microservices that talk over Kafka events, deployed on Google Cloud.</p>
+        <ul class="pts">
+          <li>Event-driven order, inventory and payment flows</li>
+          <li>Service-per-domain boundaries with independent deploys</li>
+        </ul>
+        <div class="tech"><span>FastAPI</span><span>Kafka</span><span>GCP</span><span>Docker</span><span>PostgreSQL</span></div>
+        <div class="links"><span class="private">Repo coming soon</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="ai backend">
+        <p class="tag">Applied AI · Governed RAG</p>
+        <h3>Construction Cost Estimator</h3>
+        <p>A hybrid retrieval assistant that helps estimators price construction work from past projects. A governance layer keeps it from making up numbers.</p>
+        <ul class="pts">
+          <li>Structured metadata filters combined with semantic search</li>
+          <li>Governance layer: source-cited answers and confidence checks</li>
+        </ul>
+        <div class="tech"><span>Python</span><span>NVIDIA NIM</span><span>Vector search</span><span>RAG</span></div>
+        <div class="links"><a href="https://github.com/rahul-bavaliya/SaskEnergy" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card feature reveal" data-cat="full ai">
+        <p class="tag">Full-stack · Monorepo</p>
+        <h3>Work Order Management System</h3>
+        <p>A work-order platform for local service businesses that can be configured for different industries, with web and mobile clients sharing one typed API. It's the most architecturally ambitious thing I've built.</p>
+        <ul class="pts">
+          <li>Turborepo monorepo: Next.js web app, Expo mobile app, shared tRPC API layer</li>
+          <li>Supabase data layer with Clerk and Microsoft Entra ID single sign-on</li>
+          <li>Claude API features for job intake, summaries, and triage</li>
+        </ul>
+        <div class="tech"><span>TypeScript</span><span>Next.js</span><span>Expo</span><span>tRPC</span><span>Supabase</span><span>Claude API</span></div>
+        <div class="links"><a href="https://github.com/rahul-bavaliya/enterprise-workorder-saas" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card reveal" data-cat="full ai">
+        <p class="tag">Full-stack · SMB software</p>
+        <h3>Auto Shop CRM</h3>
+        <p>Shop management for independent garages, covering intake to invoice.</p>
+        <ul class="pts">
+          <li>VIN scanning, job-card lifecycle, Stripe invoicing</li>
+          <li>AI-assisted diagnostics from symptoms and vehicle history</li>
+        </ul>
+        <div class="tech"><span>Django / DRF</span><span>React</span><span>PostgreSQL</span><span>Docker</span><span>Stripe</span></div>
+        <div class="links"><span class="private">Repo coming soon</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="ai">
+        <p class="tag">Document AI</p>
+        <h3>PDF Intelligence Pipeline</h3>
+        <p>A RAG pipeline that ingests, chunks and indexes PDF documents so you can ask questions and get answers grounded in the source pages.</p>
+        <div class="tech"><span>Python</span><span>Embeddings</span><span>Vector DB</span><span>LLM</span></div>
+        <div class="links"><span class="private">Repo coming soon</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="ai backend">
+        <p class="tag">Speech AI</p>
+        <h3>Audio-to-Text Pipeline</h3>
+        <p>A transcription pipeline that compares OpenAI Whisper and IBM Watson speech-to-text on the same audio, with post-processing into usable text.</p>
+        <div class="tech"><span>Python</span><span>Whisper</span><span>IBM Watson</span></div>
+        <div class="links"><span class="private">Repo coming soon</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="ai">
+        <p class="tag"><span class="wip">● In progress</span> · Agents</p>
+        <h3>Self-Learning Browser Agent</h3>
+        <p>An agent built on pretrained models that operates Chrome and Edge, and improves from its own successful runs instead of following hand-written scripts.</p>
+        <div class="tech"><span>Python</span><span>LLM agents</span><span>Browser automation</span></div>
+        <div class="links"><span class="private">Building in public soon</span></div>
+      </article>
+
+      <article class="card feature reveal" data-cat="backend">
+        <p class="tag">Data · Telematics</p>
+        <h3>Equipment Telematics Analytics</h3>
+        <p>Power BI reporting on machine telematics: authenticated API pulls written in Power Query (M), plus DAX measures that track engine-hour milestones across a machine's first six years.</p>
+        <div class="tech"><span>Power BI</span><span>Power Query M</span><span>DAX</span><span>REST APIs</span></div>
+        <div class="links"><span class="private">Professional work · code private</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">03</span><h2>Experience</h2></div>
+    <div class="timeline">
+      <div class="role reveal">
+        <p class="when">Present</p>
+        <h3>Service Pricing Manager</h3>
+        <p class="org">Brandt Tractor Ltd. · Regina, SK</p>
+        <p>I own service pricing and the analytics behind it. I built Power BI dashboards on telematics data, wrote API integrations, lead internal programs, and prototyped AI tools for service operations.</p>
+      </div>
+      <div class="role reveal">
+        <p class="when">Earlier</p>
+        <h3>Software Engineer</h3>
+        <p class="org">Newgen Software</p>
+        <p>Enterprise Java development on a low-code process-automation and content-management platform.</p>
+      </div>
+      <div class="role reveal">
+        <p class="when">Earlier</p>
+        <h3>Software Engineer</h3>
+        <p class="org">Tata Consultancy Services (TCS)</p>
+        <p>Enterprise Java engineering for large-scale client systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow">04 · Contact</p>
+    <h2>Building something with LLMs that has to actually work?</h2>
+    <p>I'm open to Senior Backend and AI Developer roles, remote or in Saskatchewan. The quickest way to reach me is through GitHub.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/rahul-bavaliya" target="_blank" rel="noopener">Find me on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Rahul · Regina, Saskatchewan</span>
+    <span>Hand-built, hosted on GitHub Pages</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // project filters
+  const btns = document.querySelectorAll('.filters button');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.setAttribute('aria-pressed', x === b));
+    const f = b.dataset.f;
+    document.querySelectorAll('.card').forEach(c => {
+      c.hidden = f !== 'all' && !c.dataset.cat.split(' ').includes(f);
+    });
+  }));
+  // theme toggle
+  const tb = document.getElementById('theme-btn');
+  const setLabel = () => tb.setAttribute('aria-label', 'Switch to ' + (document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark') + ' theme');
+  setLabel();
+  tb.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    setLabel();
+    dispatchEvent(new Event('themechange'));
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    let saved; try { saved = localStorage.getItem('theme'); } catch (_) {}
+    if (!saved) { document.documentElement.dataset.theme = e.matches ? 'dark' : 'light'; setLabel(); dispatchEvent(new Event('themechange')); }
+  });
+  // 3D tilt on cards (pointer devices only)
+  if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+    document.querySelectorAll('.card').forEach(c => {
+      c.addEventListener('pointermove', e => {
+        const r = c.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.classList.add('tilting');
+        c.style.transform = `rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateZ(6px)`;
+      });
+      c.addEventListener('pointerleave', () => { c.classList.remove('tilting'); c.style.transform = ''; });
+    });
+  }
+  // scroll reveal
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+<script type="module" src="js/scene.js"></script>
+</body>
+</html>
