@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rahul — Backend & AI Developer</title>
-<meta name="description" content="Rahul — Backend & AI Developer in Regina, SK. Python, FastAPI, LLMs, RAG, microservices. 6+ years building production systems.">
-<meta property="og:title" content="Rahul — Backend & AI Developer">
-<meta property="og:description" content="Python · FastAPI · LLMs · RAG · Microservices. Building intelligent, scalable systems from Regina, SK.">
+<title>Rahul Bavaliya — Backend Developer · Python, FastAPI, Java · AI &amp; LLM</title>
+<meta name="description" content="Rahul Bavaliya — Backend Developer in Regina, SK. Python, FastAPI, Java and LLM integration. Six years across enterprise systems at TCS, Newgen and Brandt Tractor.">
+<meta property="og:title" content="Rahul Bavaliya — Backend Developer · AI &amp; LLM Integration">
+<meta property="og:description" content="Python · FastAPI · Java · LLM integration. Connecting large language models to real products.">
 <meta property="og:type" content="website">
 <script>
   // set theme before paint: saved choice, else system preference
@@ -128,6 +128,24 @@
   .contact p{color:var(--ink-2);max-width:52ch;margin-bottom:28px;font-size:17px}
   .contact-lines{margin-top:22px;font:14px var(--mono);color:var(--ink-3)}
   .contact-lines a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule)}
+
+  .role ul.pts{list-style:none;margin-top:10px;max-width:72ch;font-size:15px;color:var(--ink-2)}
+  .role ul.pts li{padding-left:16px;position:relative;margin-bottom:5px}
+  .role ul.pts li::before{content:"→";position:absolute;left:0;color:var(--wheat);font-size:12px;top:2px}
+  .role .where{font:13px var(--mono);color:var(--ink-3);margin-left:6px}
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .ai-cell{background:var(--paper);padding:26px 26px 22px}
+  .ai-cell .tag{margin-bottom:8px}
+  .ai-cell h3{font:400 22px/1.2 var(--serif);margin-bottom:8px}
+  .ai-cell p{color:var(--ink-2);font-size:15px}
+  .ai-note{margin-top:18px;font:13px var(--mono);color:var(--ink-3)}
+  .two-col{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+  .mini h3{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:12px}
+  .mini .item{margin-bottom:18px}
+  .mini .item b{display:block;font-weight:600}
+  .mini .item span{display:block;color:var(--ink-2);font-size:15px}
+  .mini .item small{font:12.5px var(--mono);color:var(--ink-3)}
+  .mini a{color:var(--sky)}
   footer{border-top:1px solid var(--rule);padding:24px 0 40px;font:13px var(--mono);color:var(--ink-3)}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -144,6 +162,8 @@
     .facts div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
     .about{grid-template-columns:1fr;gap:28px}
     .grid{grid-template-columns:1fr}
+    .ai-grid{grid-template-columns:1fr}
+    .two-col{grid-template-columns:1fr;gap:28px}
     .card.feature{grid-column:span 1}
   }
 </style>
@@ -157,6 +177,7 @@
     <div class="nav-right">
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#ai">AI &amp; LLM</a></li>
         <li><a href="#work">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -172,21 +193,22 @@
 <header class="hero" id="top">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">Backend &amp; AI Developer · Regina, SK</p>
+    <p class="eyebrow">Backend Developer · Regina, SK</p>
     <h1>I build backends that <em>think</em> — and systems that scale.</h1>
-    <p class="lede">Six years of production engineering, from enterprise Java to Python microservices, now focused on LLM applications: retrieval pipelines, agents, and tools that turn messy operational data into decisions.</p>
+    <p class="lede">Six years across Java and Python enterprise systems, from ICICI Bank loan flows to Lenovo's multisite partner portal, now focused on connecting large language models to real products.</p>
     <div class="cta">
       <a class="btn primary" href="#work">See the work</a>
       <a class="btn" href="https://github.com/rahul-bavaliya" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/rahul-bavaliya" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="mailto:Rahul.Bavaliya.Jobs@gmail.com">Email</a>
     </div>
   </div>
   <div class="wrap"><div class="horizon"></div>
     <div class="facts">
-      <div><b>6+</b><small>years engineering</small></div>
-      <div><b>2</b><small>postgrad diplomas · AI &amp; Data</small></div>
-      <div><b>RAG</b><small>+ ML hybrid systems</small></div>
-      <div><b>3</b><small>industries shipped in</small></div>
+      <div><b>6</b><small>years in Java &amp; Python systems</small></div>
+      <div><b>40+</b><small>branches served at Brandt</small></div>
+      <div><b>4</b><small>person team led, scope to rollout</small></div>
+      <div><b>IBM</b><small>AI Developer certificate, 2026</small></div>
     </div>
   </div>
 </header>
@@ -196,33 +218,49 @@
     <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
     <div class="about">
       <div class="reveal">
-        <p>I'm a backend developer who has spent my career on the side of software that has to work every day: <strong>enterprise Java platforms at TCS and Newgen Software</strong>, then <strong>Python and FastAPI services</strong>, and now <strong>applied AI</strong> — RAG pipelines, LLM agents, and the evaluation and guardrails that make them trustworthy.</p>
-        <p>Today I'm the <strong>Service Pricing Manager at Brandt Tractor</strong>, where I sit between operations and data. I build Power BI reporting on equipment telematics, wire up APIs, and lead internal programs. That seat taught me something most AI demos miss: the hard part is the messy, real-world data and the people who need a straight answer from it.</p>
-        <p>I'm looking for a <strong>Senior Backend or AI Developer</strong> role where I can build those systems full-time.</p>
+        <p>I'm a backend developer with <strong>six years in Java and Python enterprise systems</strong>. At Tata Consultancy Services and Newgen Software I delivered <strong>Liferay DXP features for Lenovo's multisite Partner Hub</strong> and <strong>loan and credit-card process flows for ICICI Bank</strong>.</p>
+        <p>At <strong>Brandt Tractor</strong> I build Python data pipelines, Power Apps and Power Automate workflows, and the analytics behind labour pricing across 40+ branches. I led a team of 4 from scoping to rollout, including the rollout to Australia and New Zealand.</p>
+        <p>Through Saskatchewan Polytechnic's <strong>Artificial Intelligence &amp; Data Analytics</strong> program and the <strong>IBM AI Developer Professional Certificate</strong>, I've focused on connecting large language models to real products. I'm looking for a <strong>Senior Backend or AI Developer</strong> role.</p>
       </div>
       <div class="stack reveal">
         <h3>Languages</h3>
-        <ul><li>Python</li><li>Java</li><li>Rust</li><li>TypeScript</li><li>SQL</li><li>DAX / M</li></ul>
+        <ul><li>Python</li><li>Java 8</li><li>Rust (learning)</li><li>Kotlin</li><li>SQL</li><li>DAX / M</li></ul>
         <h3>Backend</h3>
-        <ul><li>FastAPI</li><li>Django / DRF</li><li>tRPC</li><li>Kafka</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <ul><li>FastAPI</li><li>REST APIs</li><li>Liferay DXP 7.2</li><li>Newgen iBPS</li><li>JUnit</li></ul>
         <h3>AI / LLM</h3>
-        <ul><li>RAG</li><li>Claude API</li><li>NVIDIA NIM</li><li>Llama 3.1</li><li>ChromaDB</li><li>Whisper</li><li>XGBoost</li></ul>
-        <h3>Cloud &amp; Data</h3>
-        <ul><li>GCP</li><li>Supabase</li><li>Power BI</li><li>REST APIs</li></ul>
+        <ul><li>LLM integration</li><li>RAG</li><li>NLP</li><li>IBM Watson</li><li>Claude Code</li><li>GitHub Copilot</li></ul>
+        <h3>Data &amp; Automation</h3>
+        <ul><li>Power BI</li><li>Power Apps</li><li>Power Automate</li><li>ETL</li><li>Web scraping</li></ul>
+        <h3>DevOps &amp; Stores</h3>
+        <ul><li>Git / GitHub / GitLab</li><li>SVN</li><li>Jenkins CI/CD</li><li>MySQL</li><li>Oracle</li><li>Firebase</li><li>AWS</li></ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">02</span><h2>AI &amp; LLM experience</h2></div>
+    <div class="ai-grid reveal">
+      <div class="ai-cell"><p class="tag">LLM integration</p><h3>LLM-powered product features</h3><p>Python/FastAPI backends that connect LLMs to AI diagnostics, smart recommendations and natural-language interfaces.</p></div>
+      <div class="ai-cell"><p class="tag">Retrieval</p><h3>RAG and PDF chatbots</h3><p>Retrieval pipelines that ground answers in source documents, from PDF chatbots to hybrid RAG + ML estimators.</p></div>
+      <div class="ai-cell"><p class="tag">Applied ML</p><h3>NLP, vision and speech</h3><p>NLP, object detection and IBM Watson speech-to-text from the AI &amp; Data Analytics program at Saskatchewan Polytechnic (2023).</p></div>
+      <div class="ai-cell"><p class="tag">At work</p><h3>AI on day-to-day problems</h3><p>At Brandt I apply data analysis, machine learning and AI to operational problems, and automate internal workflows with Power Apps and Power Automate.</p></div>
+      <div class="ai-cell"><p class="tag">Workflow</p><h3>AI-assisted development</h3><p>I write and debug Python with Claude Code and GitHub Copilot, across capstone work, personal projects and Power Platform work.</p></div>
+      <div class="ai-cell"><p class="tag">Certification</p><h3>IBM AI Developer Professional Certificate</h3><p>Completed through IBM / Coursera in 2026.</p></div>
     </div>
   </div>
 </section>
 
 <section id="work">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="num">02</span><h2>Selected projects</h2></div>
+    <div class="sec-head reveal"><span class="num">03</span><h2>Selected projects</h2></div>
     <div class="filters reveal" role="group" aria-label="Filter projects">
       <button aria-pressed="true" data-f="all">All</button>
       <button aria-pressed="false" data-f="ai">AI / LLM</button>
       <button aria-pressed="false" data-f="backend">Backend</button>
+      <button aria-pressed="false" data-f="automation">Automation</button>
     </div>
-
     <div class="grid">
 
       <article class="card feature reveal" data-cat="ai backend">
@@ -237,7 +275,18 @@
         <div class="tech"><span>Python 3.13</span><span>FastAPI</span><span>XGBoost</span><span>ChromaDB</span><span>NVIDIA NIM</span><span>Llama 3.1</span></div>
         <div class="links"><span class="private">Professional work · code private</span></div>
       </article>
-
+      <article class="card feature reveal" data-cat="ai backend">
+        <p class="tag">Saskatchewan Polytechnic · AI &amp; Data Analytics</p>
+        <h3>AI Capstone Projects</h3>
+        <p>Python/FastAPI backends that connect large language models to real product features: AI diagnostics, smart recommendations and natural-language interfaces, plus RAG and PDF chatbots.</p>
+        <ul class="pts">
+          <li>LLM-powered diagnostics and recommendations behind REST APIs</li>
+          <li>RAG pipelines and PDF chatbots that answer from the source documents</li>
+          <li>Coursework in NLP, object detection, web scraping and Power BI</li>
+        </ul>
+        <div class="tech"><span>Python</span><span>FastAPI</span><span>LLMs</span><span>RAG</span><span>NLP</span><span>Object detection</span></div>
+        <div class="links"><span class="private">Coursework · code private</span></div>
+      </article>
       <article class="card feature reveal" data-cat="backend">
         <p class="tag"><span class="wip">● Active</span> · Rust · Domain modelling</p>
         <h3>Quoto</h3>
@@ -250,8 +299,6 @@
         <div class="tech"><span>Rust</span><span>Web API</span><span>PostgreSQL</span><span>Docker</span><span>Unit + scenario tests</span></div>
         <div class="links"><a href="https://github.com/rahul-bavaliya/quoto" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
-
-
       <article class="card reveal" data-cat="ai backend">
         <p class="tag">Applied AI · Governed RAG</p>
         <h3>Construction Cost Estimator</h3>
@@ -263,9 +310,27 @@
         <div class="tech"><span>Python</span><span>NVIDIA NIM</span><span>Vector search</span><span>RAG</span></div>
         <div class="links"><a href="https://github.com/rahul-bavaliya/SaskEnergy" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
-
-
-
+      <article class="card reveal" data-cat="automation backend">
+        <p class="tag">Personal · Web scraping</p>
+        <h3>SaskJobs Scraping API</h3>
+        <p>A Python REST API that scrapes job listings from the SaskJobs website and serves them as clean, structured data.</p>
+        <div class="tech"><span>Python</span><span>REST API</span><span>Web scraping</span></div>
+        <div class="links"><a href="https://github.com/rahul-bavaliya/saskjobs" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+      <article class="card reveal" data-cat="automation backend">
+        <p class="tag">Personal · API reverse engineering</p>
+        <h3>Mobile API Mock</h3>
+        <p>Reverse-engineered a food-delivery mobile API and built a Python mock that serves its responses into a web portal.</p>
+        <div class="tech"><span>Python</span><span>REST APIs</span><span>Reverse engineering</span></div>
+        <div class="links"><span class="private">Personal project</span></div>
+      </article>
+      <article class="card reveal" data-cat="automation">
+        <p class="tag">Personal · Automation</p>
+        <h3>Scheduling Automation</h3>
+        <p>Python automation that monitors a delivery app's scheduling API for open shifts. Built and running.</p>
+        <div class="tech"><span>Python</span><span>REST APIs</span><span>Automation</span></div>
+        <div class="links"><span class="private">Personal project</span></div>
+      </article>
       <article class="card reveal" data-cat="ai">
         <p class="tag">Document AI</p>
         <h3>PDF Intelligence Pipeline</h3>
@@ -273,7 +338,6 @@
         <div class="tech"><span>Python</span><span>Embeddings</span><span>Vector DB</span><span>LLM</span></div>
         <div class="links"><span class="private">Repo coming soon</span></div>
       </article>
-
       <article class="card reveal" data-cat="ai backend">
         <p class="tag">Speech AI</p>
         <h3>Audio-to-Text Pipeline</h3>
@@ -281,7 +345,6 @@
         <div class="tech"><span>Python</span><span>Whisper</span><span>IBM Watson</span></div>
         <div class="links"><span class="private">Repo coming soon</span></div>
       </article>
-
       <article class="card reveal" data-cat="ai">
         <p class="tag"><span class="wip">● In progress</span> · Agents</p>
         <h3>Self-Learning Browser Agent</h3>
@@ -289,12 +352,11 @@
         <div class="tech"><span>Python</span><span>LLM agents</span><span>Browser automation</span></div>
         <div class="links"><span class="private">Building in public soon</span></div>
       </article>
-
-      <article class="card feature reveal" data-cat="backend">
-        <p class="tag">Data · Telematics</p>
-        <h3>Equipment Telematics Analytics</h3>
-        <p>Power BI reporting on machine telematics: authenticated API pulls written in Power Query (M), plus DAX measures that track engine-hour milestones across a machine's first six years.</p>
-        <div class="tech"><span>Power BI</span><span>Power Query M</span><span>DAX</span><span>REST APIs</span></div>
+      <article class="card reveal" data-cat="automation backend">
+        <p class="tag">Data · Analytics</p>
+        <h3>Labour Pricing &amp; Telematics Analytics</h3>
+        <p>Python data pipelines and Power BI analysis behind labour pricing decisions across 40+ branches, plus Power Query (M) API pulls and DAX measures that track engine-hour milestones.</p>
+        <div class="tech"><span>Python</span><span>Power BI</span><span>Power Query M</span><span>DAX</span><span>REST APIs</span></div>
         <div class="links"><span class="private">Professional work · code private</span></div>
       </article>
 
@@ -304,25 +366,65 @@
 
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="num">03</span><h2>Experience</h2></div>
+    <div class="sec-head reveal"><span class="num">04</span><h2>Experience</h2></div>
     <div class="timeline">
       <div class="role reveal">
-        <p class="when">Present</p>
+        <p class="when">Jan 2024 – Present</p>
         <h3>Service Pricing Manager</h3>
-        <p class="org">Brandt Tractor Ltd. · Regina, SK</p>
-        <p>I own service pricing and the analytics behind it. I built Power BI dashboards on telematics data, wrote API integrations, lead internal programs, and prototyped AI tools for service operations.</p>
+        <p class="org">Brandt Tractor Ltd <span class="where">Regina, SK</span></p>
+        <ul class="pts">
+          <li>Build Python data pipelines and Power BI analysis behind labour pricing decisions and operational reporting across 40+ North American branches.</li>
+          <li>Led a team of 4 on the Brandt Service Times (BST) initiative, standardising labour times to improve quoting accuracy across branches and equipment product lines.</li>
+          <li>Validated labour standards with Product Support, Service Operations, Branch Management and technical SMEs; ran pilots and continuous-improvement work to reduce quote variability.</li>
+          <li>Built Microsoft Power Apps and Power Automate solutions that automate internal workflows, including queuing and tracking user requests.</li>
+          <li>Trained branch teams across 40+ branches, supported the rollout to Australia and New Zealand, and prepared executive summaries, business cases and adoption metrics for leadership.</li>
+        </ul>
       </div>
       <div class="role reveal">
-        <p class="when">Earlier</p>
-        <h3>Software Engineer</h3>
-        <p class="org">Newgen Software</p>
-        <p>Enterprise Java development on a low-code process-automation and content-management platform.</p>
+        <p class="when">Jun 2021 – Dec 2021</p>
+        <h3>Senior Software Engineer</h3>
+        <p class="org">Newgen Software Technologies <span class="where">Remote, India</span></p>
+        <ul class="pts">
+          <li>Led new-feature work for ICICI Bank's loan and credit-card process flows on the Omni/iBPS platform in Java, from requirements analysis to sign-off.</li>
+          <li>Designed and maintained document process flows for Home, Auto and Personal Loans and Credit Cards; wrote JUnit integration tests.</li>
+          <li>Worked directly with ICICI Bank partners on requirements, connectivity, and group and integration testing in a Scrum team.</li>
+        </ul>
       </div>
       <div class="role reveal">
-        <p class="when">Earlier</p>
+        <p class="when">Feb 2019 – May 2021</p>
         <h3>Software Engineer</h3>
-        <p class="org">Tata Consultancy Services (TCS)</p>
-        <p>Enterprise Java engineering for large-scale client systems.</p>
+        <p class="org">Tata Consultancy Services <span class="where">Gandhinagar, India</span></p>
+        <ul class="pts">
+          <li>Lenovo Partner Hub: developed Java features on Liferay DXP 7.2 for a multisite partner portal across APAC, EMEA, ANZ and NA, including portlets, workflows, fragments and SSL-secured REST APIs with unit tests.</li>
+          <li>Delivered critical features on schedule while coordinating with vendors in China, England, Mexico, the US and New Zealand; code managed in GitLab with CI/CD pipelines.</li>
+          <li>Pfizer: built automation to deploy product data to e-commerce platforms (Amazon, Walmart, eBay) and cross-check listings against live content; built an MS Excel extension for filtering large datasets.</li>
+        </ul>
+      </div>
+      <div class="role reveal">
+        <p class="when">Mar 2018 – Dec 2018</p>
+        <h3>Android Developer</h3>
+        <p class="org">Jnext Development <span class="where">Bhavnagar, India</span></p>
+        <ul class="pts"><li>Developed Android applications in Kotlin.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">05</span><h2>Education &amp; certification</h2></div>
+    <div class="two-col reveal">
+      <div class="mini">
+        <h3>Education</h3>
+        <div class="item"><b>Saskatchewan Polytechnic · Artificial Intelligence &amp; Data Analytics</b><span>Large language models, NLP, object detection, Python, web scraping, Power BI; AI capstone projects.</span><small>Regina, SK · 2023</small></div>
+        <div class="item"><b>Saskatchewan Polytechnic · Technology Management</b><span>Agile methodology, project management, database management, programming strategies.</span><small>Regina, SK · 2022</small></div>
+        <div class="item"><b>Gujarat Technological University · Bachelor of Engineering, Information Technology</b><small>India · 2018</small></div>
+      </div>
+      <div class="mini">
+        <h3>Certification</h3>
+        <div class="item"><b>IBM AI Developer Professional Certificate</b><span>IBM / Coursera</span><small>2026</small></div>
+        <h3 style="margin-top:28px">Languages</h3>
+        <div class="item"><span>English (professional working proficiency)</span></div>
       </div>
     </div>
   </div>
@@ -330,12 +432,13 @@
 
 <section class="contact" id="contact">
   <div class="wrap reveal">
-    <p class="eyebrow">04 · Contact</p>
+    <p class="eyebrow">06 · Contact</p>
     <h2>Building something with LLMs that has to actually work?</h2>
     <p>I'm open to Senior Backend and AI Developer roles, remote or in Saskatchewan. The fastest way to reach me is email.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:Rahul.Bavaliya.Jobs@gmail.com">Email me</a>
       <a class="btn" href="tel:+14374492404">Call +1-437-449-2404</a>
+      <a class="btn" href="https://www.linkedin.com/in/rahul-bavaliya" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/rahul-bavaliya" target="_blank" rel="noopener">GitHub</a>
     </div>
     <p class="contact-lines"><a href="mailto:Rahul.Bavaliya.Jobs@gmail.com">Rahul.Bavaliya.Jobs@gmail.com</a> · <a href="tel:+14374492404">+1-437-449-2404</a></p>
@@ -344,7 +447,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> Rahul · Regina, Saskatchewan</span>
+    <span>© <span id="yr">2026</span> Rahul Bavaliya · Regina, Saskatchewan</span>
     <span>Hand-built, hosted on GitHub Pages</span>
   </div>
 </footer>
